@@ -1,0 +1,54 @@
+@use "~styles/colors.scss";
+
+.wrapper {
+    display: block;
+    position: relative;
+
+    .label {
+        position: absolute;
+        top: -0.6em;
+        left: -1px;
+        background-color: #ffffff;
+        padding: 0 12px;
+        border-radius: 4px;
+    }
+
+    .textarea {
+        display: block;
+        padding: 16px 20px;
+        width: 100%;
+        border: 1px solid colors.$main-color;
+        border-radius: 10px;
+        color: inherit;
+        resize: none;
+
+        background-color: #ffffff;
+
+        transition: 0.3s;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: transparent;
+        }
+    }
+
+    .textarea.textareaWithoutLabel {
+        &::placeholder {
+            color: inherit;
+            opacity: 50%;
+        }
+    }
+}
+
+.wrapper.error {
+    textarea {
+        border: 1px solid rgba($color: colors.$error-color, $alpha: 0.7);
+    }
+
+    .label {
+        color: colors.$error-color;
+    }
+}

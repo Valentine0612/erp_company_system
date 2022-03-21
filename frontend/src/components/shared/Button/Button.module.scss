@@ -1,0 +1,13 @@
+@use "~styles/button.scss";
+
+.defaultButton {
+    @include button.button;
+}
+
+.redButton {
+    @include button.redButton;
+}
+
+.whiteButton {
+    @include button.whiteButton;
+}

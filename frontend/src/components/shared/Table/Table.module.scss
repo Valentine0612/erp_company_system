@@ -1,0 +1,22 @@
+@use "~styles/colors.scss";
+
+.table {
+    padding: 0px !important;
+    overflow: hidden;
+
+    & > * {
+        display: block;
+        padding: 12px 8px;
+
+        &:nth-child(2n + 1) {
+            background-color: rgba($color: colors.$main-color, $alpha: 0.15);
+        }
+    }
+
+    &.withHeader {
+        & > *:first-child {
+            color: colors.$main-background-color;
+            background-color: rgba($color: colors.$main-color, $alpha: 1);
+        }
+    }
+}

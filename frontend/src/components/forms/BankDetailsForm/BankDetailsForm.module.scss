@@ -1,0 +1,43 @@
+@use "~styles/colors.scss";
+
+.mediumMarginBottom:not(:last-child) {
+    margin-bottom: 1.6em;
+}
+
+.smallMarginBottom:not(:last-child) {
+    margin-bottom: 0.8em;
+}
+
+.info {
+    text-align: center;
+}
+
+.buttonsBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > *:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    .whiteButton {
+        border-color: colors.$main-color;
+        background-color: rgba($color: colors.$main-color, $alpha: 0);
+
+        &:hover {
+            background-color: rgba($color: colors.$main-color, $alpha: 0.2);
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .buttonsBlock {
+        display: block;
+
+        & > *:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+}

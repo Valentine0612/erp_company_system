@@ -1,0 +1,11 @@
+@use "~styles/button.scss";
+
+.table .tableLine {
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.table .tableHeader {
+    cursor: default;
+}

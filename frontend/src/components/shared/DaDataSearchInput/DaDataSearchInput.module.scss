@@ -1,0 +1,32 @@
+@use "~styles/colors.scss";
+
+.input.withShownSelector {
+    border-radius: 0px;
+}
+
+.resultsBlock {
+    border: 1px solid colors.$main-color;
+    border-top: none;
+    border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+
+    transition: 0.3s;
+    visibility: visible;
+    opacity: 1;
+    max-height: 1000px;
+
+    &.hidden {
+        visibility: hidden;
+        opacity: 0;
+        max-height: 0px;
+    }
+}
+
+.result {
+    padding: 8px 16px;
+    cursor: pointer;
+
+    &:nth-child(2n) {
+        background-color: rgba($color: colors.$main-color, $alpha: 0.1);
+    }
+}

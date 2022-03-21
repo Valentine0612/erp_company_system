@@ -1,0 +1,18 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "eslint:recommended",
+        "next/core-web-vitals",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:cypress/recommended"
+    ],
+    "rules": {
+        "react-hooks/exhaustive-deps": "off",
+        "@next/next/no-img-element": "off",
+        "@next/next/no-html-link-for-pages": "off"
+    },
+    "globals": {
+        "NodeJS": true
+    }
+}

@@ -1,0 +1,27 @@
+@use "~styles/colors.scss";
+
+.statesList {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    li {
+        display: block;
+        cursor: pointer;
+        padding: 4px 20px;
+        border-radius: 4px;
+        transition: 0.3s;
+
+        &.selected {
+            background-color: colors.$green-color;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .statesList {
+        display: block;
+        text-align: center;
+    }
+}

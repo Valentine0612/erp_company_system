@@ -1,0 +1,42 @@
+@use "~styles/colors.scss";
+@use "~styles/button.scss";
+@use "~styles/defaults.scss";
+
+.pageTitle {
+    @include defaults.pageTitle;
+}
+
+.table {
+    margin-bottom: 20px;
+
+    .tableLine {
+        display: grid;
+        grid-gap: 20px;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+
+        .taskTitle {
+            margin-bottom: 8px;
+        }
+
+        .taskInfo {
+            font-weight: bold;
+            text-align: left;
+
+            span {
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .table .tableLine {
+        grid-template-columns: repeat(1, 1fr);
+
+        .taskInfo {
+            text-align: center;
+        }
+    }
+}

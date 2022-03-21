@@ -1,0 +1,39 @@
+@use "~styles/colors.scss";
+
+.header {
+    display: none;
+    background: #ffffff;
+    box-shadow: 0px 4px 20px rgba(colors.$main-color, 0.2);
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+.menu {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        color: colors.$green-color;
+    }
+
+    svg {
+        font-size: 24px;
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header {
+        display: flex;
+    }
+}

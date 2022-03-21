@@ -1,0 +1,65 @@
+@use "~styles/colors.scss";
+
+.largeMarginBottom:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+.mediumMarginBottom:not(:last-child) {
+    margin-bottom: 1.6em;
+}
+
+.smallMarginBottom:not(:last-child) {
+    margin-bottom: 0.8em;
+}
+
+.title {
+    text-align: center;
+}
+
+.filesTable {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    .filesTableItem {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & > span {
+            display: block;
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.buttonsBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > *:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    .whiteButton {
+        border-color: colors.$main-color;
+        background-color: rgba($color: colors.$main-color, $alpha: 0);
+
+        &:hover {
+            background-color: rgba($color: colors.$main-color, $alpha: 0.2);
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .buttonsBlock {
+        display: block;
+
+        & > *:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+}

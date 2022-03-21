@@ -1,0 +1,5 @@
+.popupElement {
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}

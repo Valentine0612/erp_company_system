@@ -1,0 +1,98 @@
+@use "~styles/colors.scss";
+@use "~styles/button.scss";
+
+.upperBlock {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.userState {
+    @include button.buttonWithoutHover;
+    flex-shrink: 0;
+    width: unset;
+    text-transform: unset;
+    padding: 8px 16px;
+}
+
+.documentsTable {
+    margin-bottom: 20px;
+
+    .documentsTableLine {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .documentsTitle {
+        display: block;
+        flex-grow: 1;
+    }
+
+    .documentTableButton {
+        flex-shrink: 0;
+        width: unset;
+        padding: 8px;
+        text-transform: uppercase;
+    }
+}
+
+.tasksTable .tableLine {
+    display: grid;
+    grid-gap: 20px;
+    align-items: flex-start;
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .taskTitle {
+        margin-bottom: 8px;
+    }
+
+    .taskInfo {
+        font-weight: bold;
+
+        span {
+            font-weight: normal;
+        }
+    }
+
+    .centerText {
+        text-align: center;
+    }
+}
+
+.tableTitle {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 720px) {
+    .upperBlock {
+        display: block;
+    }
+
+    .table .tableLine .nameBlock {
+        justify-content: center;
+    }
+
+    .tasksTable .tableLine {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .documentsTitle {
+        width: 100%;
+        text-align: center;
+    }
+
+    .documentTableButton {
+        flex-grow: 1;
+    }
+}

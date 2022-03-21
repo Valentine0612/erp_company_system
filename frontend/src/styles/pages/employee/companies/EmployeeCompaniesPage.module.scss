@@ -1,0 +1,31 @@
+@use "~styles/colors.scss";
+@use "~styles/button.scss";
+@use "~styles/defaults.scss";
+
+.pageTitle {
+    @include defaults.pageTitle;
+}
+
+.table {
+    .tableLine {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        align-items: center;
+        text-align: center;
+
+        .nameBlock {
+            font-weight: bold;
+        }
+
+        .stateBlock {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .table .tableLine .nameBlock {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,4 @@
+export enum NavbarActionsEnum {
+    OPEN_NAVBAR = "NAVBAR_ACTION__OPEN_NAVBAR",
+    CLOSE_NAVBAR = "NAVBAR_ACTION__CLOSE_NAVBAR",
+}

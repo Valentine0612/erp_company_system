@@ -1,0 +1,98 @@
+@use "~styles/colors.scss";
+@use "~styles/defaults.scss";
+
+.titleAndFindBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    .findInput {
+        min-width: 320px;
+    }
+
+    .leftBlock {
+        display: flex;
+        align-items: center;
+
+        .pageTitle {
+            @include defaults.pageTitle;
+            flex-shrink: 0;
+            margin: 0;
+
+            span {
+                color: colors.$green-color;
+            }
+        }
+
+        .createButton {
+            display: inline-block;
+            padding: 4px 12px;
+            text-transform: none;
+            width: unset;
+        }
+
+        & > *:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+.table {
+    margin-bottom: 20px;
+
+    .tableLine {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        align-items: center;
+        text-align: center;
+
+        .avatarBlock {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            font-weight: bold;
+
+            .avatar {
+                flex-shrink: 0;
+            }
+
+            & > *:not(:last-child) {
+                margin-right: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .titleAndFindBlock {
+        display: block;
+
+        .findInput {
+            min-width: unset;
+        }
+
+        .leftBlock {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .table .tableLine .avatarBlock {
+        justify-content: center;
+    }
+
+    .titleAndFindBlock .leftBlock {
+        display: block;
+
+        .pageTitle {
+            margin-bottom: 20px;
+        }
+
+        .createButton {
+            width: 100%;
+        }
+    }
+}

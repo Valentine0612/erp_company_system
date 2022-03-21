@@ -1,0 +1,64 @@
+@use "./colors.scss";
+
+@mixin buttonWithoutHover {
+    position: relative;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    width: 100%;
+    border-radius: 4px;
+
+    text-align: center;
+    font-weight: bold;
+    color: colors.$main-color;
+    text-transform: uppercase;
+
+    background-color: colors.$green-color;
+    border: 1px solid colors.$green-color;
+}
+
+@mixin button {
+    @include buttonWithoutHover;
+    transition: 0.3s;
+
+    &:hover {
+        background: rgba($color: colors.$green-color, $alpha: 0.6);
+        border: 1px solid rgba($color: colors.$green-color, $alpha: 0.6);
+    }
+}
+
+@mixin redButtonWithoutHover {
+    @include buttonWithoutHover;
+
+    color: #ffffff;
+    background-color: colors.$red-color;
+    border: 1px solid colors.$red-color;
+}
+
+@mixin redButton {
+    @include redButtonWithoutHover;
+    transition: 0.3s;
+
+    &:hover {
+        background: rgba($color: colors.$red-color, $alpha: 0.8);
+        border: 1px solid rgba($color: colors.$red-color, $alpha: 0.8);
+    }
+}
+
+@mixin whiteButtonWithoutHover {
+    @include buttonWithoutHover;
+
+    color: colors.$main-color;
+    background-color: #fefefe;
+    border: 1px solid colors.$main-color;
+}
+
+@mixin whiteButton {
+    @include whiteButtonWithoutHover;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: #dddddd;
+    }
+}

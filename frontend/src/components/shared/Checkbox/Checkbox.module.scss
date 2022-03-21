@@ -1,0 +1,72 @@
+@use "~styles/colors.scss";
+
+.checkboxWrapper {
+    display: flex;
+    align-items: center;
+
+    .checkbox {
+        opacity: 0;
+        visibility: hidden;
+        width: 0;
+        height: 0;
+
+        &:not(:checked) + .checkboxLabel:after {
+            opacity: 0;
+        }
+
+        &:checked + .checkboxLabel:after {
+            opacity: 1;
+        }
+    }
+
+    .checkboxLabel {
+        display: inline-block;
+        position: relative;
+        padding-left: 32px;
+        line-height: 20px;
+        cursor: pointer;
+
+        span {
+            display: block;
+        }
+
+        &.invisible {
+            padding-left: 20px;
+
+            span {
+                width: 0;
+                color: transparent;
+                opacity: 0;
+            }
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 18px;
+            height: 18px;
+            border: 1px solid rgba($color: colors.$main-color, $alpha: 0.4);
+            border-radius: 2px;
+            background-color: #ffffff;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 3px;
+            top: 4px;
+            width: 10px;
+            height: 5px;
+            border-radius: 1px;
+            border-left: 4px solid rgba($color: colors.$main-color, $alpha: 0.8);
+            border-bottom: 4px solid rgba($color: colors.$main-color, $alpha: 0.8);
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+    }
+}

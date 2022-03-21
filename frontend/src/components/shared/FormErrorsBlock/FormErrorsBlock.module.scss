@@ -1,0 +1,33 @@
+@use "~styles/colors.scss";
+
+.errorsBlock {
+    background-color: rgba($color: colors.$error-color, $alpha: 0.5);
+    border-left: 4px solid colors.$error-color;
+    text-align: left;
+    color: rgba($color: #ffffff, $alpha: 0.8);
+
+    max-height: 1000px;
+    visibility: visible;
+    opacity: 1;
+
+    padding: 12px 12px;
+
+    transition: 0.3s;
+
+    p {
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.errorsBlock__hidden {
+    max-height: 0px;
+    visibility: hidden;
+    opacity: 0;
+
+    margin-bottom: 0px;
+    padding: 0px 12px;
+}

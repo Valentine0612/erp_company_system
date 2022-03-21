@@ -1,0 +1,25 @@
+@use "~styles/colors.scss";
+
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.breadcrumbsItem {
+    display: block;
+
+    &:not(:last-child)::after {
+        content: "/";
+        margin: 0 10px;
+    }
+
+    &:hover {
+        color: colors.$green-color;
+
+        &::after {
+            color: colors.$main-color;
+        }
+    }
+}

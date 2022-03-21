@@ -1,0 +1,40 @@
+.pageWrapper {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.taskInfoCard {
+    & > * {
+        margin-bottom: 16px;
+    }
+
+    .taskInfo {
+        font-weight: bold;
+        margin-bottom: 4px;
+
+        & > span {
+            font-weight: normal;
+        }
+    }
+}
+
+.taskEmployeeCard {
+    margin-bottom: 20px;
+}
+
+.actionButton {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 1000px) {
+    .pageWrapper {
+        display: block;
+    }
+
+    .taskInfoCard {
+        margin-bottom: 20px;
+    }
+}

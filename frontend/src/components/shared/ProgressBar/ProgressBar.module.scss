@@ -1,0 +1,14 @@
+@use "~styles/colors.scss";
+
+.progressBar {
+    position: relative;
+    height: 2px;
+    background-color: colors.$main-background-color;
+
+    .progress {
+        position: absolute;
+        height: 100%;
+        background-color: colors.$green-color;
+        transition: 0.3s;
+    }
+}

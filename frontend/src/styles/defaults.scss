@@ -1,0 +1,31 @@
+@use "./colors.scss";
+@use "./button.scss";
+
+@mixin pageTitle {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+
+    span {
+        color: colors.$green-color;
+    }
+
+    button {
+        @include button.button;
+        display: inline-block;
+        text-transform: none;
+        width: unset;
+        margin-left: 24px;
+        padding: 4px 12px;
+
+        font-size: 16px;
+    }
+
+    @media (max-width: 500px) {
+        button {
+            display: block;
+            margin-left: 0;
+            margin-top: 12px;
+            width: 100%;
+        }
+    }
+}

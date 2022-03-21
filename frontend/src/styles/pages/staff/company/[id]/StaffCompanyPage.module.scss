@@ -1,0 +1,35 @@
+.title {
+    margin-bottom: 20px;
+}
+
+.infoElement {
+    margin-bottom: 4px;
+
+    span {
+        font-weight: bold;
+    }
+}
+
+.buttonsBlock {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+
+    button {
+        width: unset;
+    }
+}
+
+@media (max-width: 720px) {
+    .buttonsBlock {
+        display: block;
+
+        button {
+            width: 100%;
+
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+}

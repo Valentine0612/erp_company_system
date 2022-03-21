@@ -1,0 +1,100 @@
+@use "~styles/colors.scss";
+
+.navbarWrapper {
+    display: block;
+    min-width: 320px;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+
+    z-index: 100;
+}
+
+.navbar {
+    display: block;
+    height: 100vh;
+    border-radius: 0px !important;
+    transition: 0.3s;
+    background-color: colors.$main-color;
+    color: colors.$main-background-color;
+    padding: 50px 32px;
+}
+
+.navbarItem {
+    display: block;
+    padding: 8px 0px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid rgba($color: colors.$main-color, $alpha: 0.5);
+    }
+
+    &.selected,
+    &:hover {
+        color: colors.$green-color;
+    }
+}
+
+.navbarItemLink {
+    display: flex;
+    align-items: center;
+}
+
+.navbarItemIconWrapper {
+    width: 40px;
+    margin-right: 12px;
+
+    .navbarItemIcon {
+        display: block;
+        font-size: 1.8em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.closeButton {
+    display: none;
+    margin-top: 30px;
+}
+
+.logo {
+    margin: 0 auto 32px;
+}
+
+@media (max-width: 1200px) {
+    .navbarWrapper {
+        display: block;
+        min-width: unset;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        &.closed {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    .navbar {
+        max-width: 320px;
+
+        &.closed {
+            transform: translateX(-100%);
+        }
+    }
+
+    .closeButton {
+        display: flex;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        width: 100%;
+    }
+}

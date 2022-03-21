@@ -1,0 +1,38 @@
+@use "~styles/colors.scss";
+
+.paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .paginatorItems {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        cursor: pointer;
+
+        transition: 0.3s;
+
+        &:not(.notClickable, .hidden, .selectedItem):hover {
+            background-color: rgba($color: colors.$main-color, $alpha: 0.1);
+        }
+
+        &.selectedItem {
+            color: colors.$main-background-color;
+            background-color: colors.$main-color;
+        }
+
+        &.hidden {
+            color: transparent;
+            background-color: transparent;
+        }
+
+        &.hidden,
+        &.notClickable {
+            cursor: default;
+        }
+    }
+}

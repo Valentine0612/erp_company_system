@@ -1,0 +1,15 @@
+@use "~styles/colors.scss";
+@use "~styles/button.scss";
+@use "~styles/defaults.scss";
+
+.pageTitle {
+    @include defaults.pageTitle;
+}
+
+.infoElement {
+    margin-bottom: 4px;
+
+    span {
+        font-weight: bold;
+    }
+}

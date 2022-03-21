@@ -1,0 +1,35 @@
+.progressBar {
+    margin-bottom: 32px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.card {
+    width: 100%;
+    max-width: 820px;
+    padding: 70px 105px;
+    margin: 0 auto;
+}
+
+.formElement:not(:last-child) {
+    margin-bottom: 1.6em;
+}
+
+.withTopMargin {
+    margin-top: 1.6em;
+}
+
+@media (max-width: 700px) {
+    .card {
+        padding: 70px 50px;
+    }
+}
+
+@media (max-width: 425px) {
+    .card {
+        padding: 70px 20px;
+    }
+}

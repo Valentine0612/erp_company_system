@@ -1,0 +1,26 @@
+.formElement:not(:last-child) {
+    margin-bottom: 1.6em;
+}
+
+.inputsBlock {
+    margin-bottom: 20px;
+}
+
+.linksBlock {
+    text-align: center;
+    cursor: default;
+
+    & > * {
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+
+        &.register {
+            font-weight: bold;
+        }
+
+        &:not(.slicer) {
+            cursor: pointer;
+        }
+    }
+}

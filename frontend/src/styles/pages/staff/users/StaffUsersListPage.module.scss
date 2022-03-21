@@ -1,0 +1,35 @@
+@use "~styles/colors.scss";
+@use "~styles/defaults.scss";
+
+.pageTitle {
+    @include defaults.pageTitle;
+    flex-shrink: 0;
+}
+
+.table {
+    margin-bottom: 20px;
+
+    .tableLine {
+        display: grid;
+        row-gap: 10px;
+        column-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        align-items: center;
+        text-align: center;
+
+        .avatarBlock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+
+            .avatar {
+                flex-shrink: 0;
+            }
+
+            & > *:not(:last-child) {
+                margin-right: 12px;
+            }
+        }
+    }
+}

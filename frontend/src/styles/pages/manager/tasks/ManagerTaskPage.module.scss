@@ -1,0 +1,69 @@
+.pageWrapper {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.additionalInfoBlock h4 {
+    margin-bottom: 12px;
+}
+
+.taskInfoCard {
+    & > * {
+        margin-bottom: 16px;
+    }
+
+    .taskInfo {
+        font-weight: bold;
+        margin-bottom: 4px;
+
+        & > span {
+            font-weight: normal;
+        }
+    }
+}
+
+.taskEmployeeCard {
+    margin-bottom: 20px;
+}
+
+.taskEmployee {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    .taskEmployeeInfo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .avatar {
+            flex-shrink: 0;
+        }
+
+        .taskEmployeeTextInfo:not(:last-child) {
+            margin-bottom: 2px;
+        }
+
+        .taskEmployeeTextInfo.name {
+            font-weight: bold;
+        }
+    }
+}
+
+.actionButton {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 1000px) {
+    .pageWrapper {
+        display: block;
+    }
+
+    .taskInfoCard {
+        margin-bottom: 20px;
+    }
+}

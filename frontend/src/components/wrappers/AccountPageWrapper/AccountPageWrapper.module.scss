@@ -1,0 +1,28 @@
+.page {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.pageWrapper {
+    display: flex;
+
+    & > * {
+        height: 100vh;
+        overflow: auto;
+    }
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.navbar {
+    flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+    .page {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+}

@@ -1,0 +1,41 @@
+.imageBlock {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+    & > *:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    .image {
+        flex-shrink: 0;
+        width: 200px;
+        padding-bottom: 200px;
+    }
+
+    .inputsBlock {
+        flex-grow: 1;
+    }
+}
+
+.formElement {
+    width: 100%;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 760px) {
+    .imageBlock {
+        display: block;
+
+        .image {
+            margin: 0 auto 20px;
+        }
+
+        .inputsBlock {
+            flex-grow: 1;
+        }
+    }
+}

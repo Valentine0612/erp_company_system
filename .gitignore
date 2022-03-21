@@ -1,0 +1,11 @@
+*.pyc
+__pycache__
+db.sqlite3
+venv
+.env
+Pipfile
+Pipfile.lock
+node_modules
+.vscode
+backend/erp_system/static/images/
+celerybeat-schedule.db

@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta content="charset=utf-8">
+    <title>Договор возмездного оказания услуг № {{number_of_contract}}</title>
+    <style type="text/css">
+        @font-face {
+            font-family: Arial;
+            src: url("{{STATIC_ROOT}}/fonts/arial.ttf");
+        }
+
+        @font-face {
+            font-family: Arial;
+            src: url("{{STATIC_ROOT}}/fonts/arialbold.ttf");
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: Times;
+            src: url("{{STATIC_ROOT}}/fonts/TimesNewRoman.ttf");
+        }
+
+        @font-face {
+            font-family: Times;
+            src: url("{{STATIC_ROOT}}/fonts/timesbold.ttf");
+            font-weight: bold;
+        }
+
+        @page {
+            margin: 2cm 2cm 2cm 2cm;
+        }
+
+        body {
+            font-size: 10pt;
+            font-family: Arial;
+        }
+
+        .header {
+            font-size: 12pt;
+            /* font-weight: bold; */
+            text-align: center;
+        }
+
+        .header p {
+            font-size: 9pt;
+        }
+
+        .details {
+            text-align: justify !important;
+            line-height: 105%;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .header_p {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+            margin-top: 7px;
+        }
+
+        .first_p {
+            margin-top: 20px;
+        }
+
+        .small_p {
+            font-size: 9pt;
+            margin-left: 20px;
+        }
+
+        .main-table {
+            margin-top: 20px;
+            width: 100%; 
+            font-size: 8pt !important;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .main-table tr, 
+        .main-table td{
+            padding-top: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 3px;
+        }
+
+        .sign-table {
+            font-size: 6pt;
+            margin-top: 50px;
+            font-family: Arial;
+            color: rgb(24,123,205);
+            border: 0.5px solid rgb(24,123,205);
+            table-layout: fixed;
+        }
+
+        .sign-table td{
+            line-height: 110%;
+            margin-left: 10px;
+            margin-right: 10px;
+            border: none;
+        }
+
+        .small_td {
+            width: 15%;
+        }
+
+        .col1 {
+            width: 30px; /* Ширина ячейки */
+        }
+
+        .col2 {
+            width: 70px; /* Ширина ячейки */
+        }
+
+        .col3 {
+            width: 200px; /* Ширина ячейки */
+        }
+
+        .bottom_table {
+            padding-top: 1px;
+            padding-left: 3px;
+            padding-bottom: 1px;
+            line-height: 100%;
+            border: white;
+            margin-top: 50px;
+        }
+
+        .bottom_table tr {
+            border: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class='header'>
+        <b>АКТ № {{number_of_task}} </b>
+        <p>в рамках договора возмездного оказания услуг №{{number_of_contract}} от {{date}}</p>
+    </div>
+    <table width="100%" >
+        <tr>
+            <td style="margin-left: 20px;">г. Москва</td>
+            <td align="right">{{today}} г.</td>
+        </tr>
+    </table>
+    <div class='details'>
+        <p class="first_p"> <b>Заказчик: </b> {{company.full_name}} </p>
+        <p> <b>Исполнитель: </b> {% if user.profile.ogrnip %}
+            ИП {{user.surname}} {{user.name}} {{user.surname}}
+        {% else%}
+            {{user.surname}} {{user.name}} {{user.surname}}
+        {% endif %} </p>
+        заключили настоящий Акт о нижеследующем:
+        
+
+        <p class="first_p small_p">1. Исполнителем в соответствии с договором возмездного оказания услуг №{{number_of_contract}} от {{date}} оказаны услуги для Заказчика:</p>
+
+        <table class="main-table" border="0.5">
+            <tr style="font-weight: bold;">
+                <td class="col1">№</td>
+                <td class="col3">Наименование работы</td>
+                <td class="col2">Единица <br> измерения</td>
+                <td class="col2">Кол-во <br> единиц</td>
+                <td>Ст-ть единицы <br> работы, руб.</td>
+                <td>Сумма, руб.</td>
+            </tr>
+            <tr>
+                <td class="col1">1</td>
+                <td class="col3">{{task.title}}</td>
+                <td class="col2">Услуга</td>
+                <td class="col2">1</td>
+                <td>{{task.price}}</td>
+                <td>{{task.price}}</td>
+            </tr>
+        </table>
+
+        <p class="first_p small_p">2. Услуги оказаны полностью, своевременно и надлежащим образом. Объем оказанных услуг, их общая стоимость и размер оплаты согласован. Претензий не имеется.</p>
+
+        <p class="small_p">3. Стоимость услуг: {{task.price}} руб. ({{task.price_in_words.rub}} рублей {{task.price_in_words.kop}} копеек), без НДС</p>
+
+        <p class="small_p">4. Период оказания услуг: {{task.from}} г. – {{task.to}} г.
+        </p>
+
+        <p class="small_p">5. Настоящий Акт составлен в двух экземплярах, имеющих равную юридическую силу, по одному экземпляру для каждой из Сторон.
+        </p>
+
+        <p class="first_p">Вышеперечисленные работы (услуги) выполнены полностью и в срок. Заказчик претензий по объему, качеству и срокам оказания услуг претензий не имеет.</p>
+
+    </div>
+    <table class="bottom_table" width="100%">
+        <tr>
+            <td><b>Заказчик: </b></td>
+            <td><b>Исполнитель: </b></td>
+        </tr>
+        <tr>
+            <td>{{company.owner}}</td>
+            <td>{{user.surname}} {{user.name}} {{user.patronymic}}</td>
+        </tr>
+        <tr>
+            <td ><div style="padding-top: 10px;">_____________________________________</div></td>
+            <td ><div style="padding-top: 10px;">_____________________________________</div></td>
+        </tr>
+        <tr>
+            <td style="font-size: 8pt; margin-left: 100px; ">Подпись/ М. П.</td>
+            <td style="font-size: 8pt; margin-left: 100px; ">(подпись)</td>
+        </tr>
+    </table>
+
+    {% include "_sign_template.html" with user=user company=company sign=sign %}
+
+</body>
+</html>

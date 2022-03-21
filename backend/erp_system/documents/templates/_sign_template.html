@@ -1,0 +1,39 @@
+{% if sign.is_manager %}
+<table class="sign-table" width="100%" cellspacing="0" cellpadding="6">
+    <tr style="font-weight: bold;">
+        <td colspan="4" align="center" style="font-size: 12pt;">
+            <img src="{{STATIC_ROOT}}/verified/verified.png" width="20px" alt="">
+            &nbsp
+            Документ подписан и передан через «CyberPay»
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">Идентификатор документа: {{sign.uuid}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Владелец сертификата: организация, сотрудник</td>
+        <td>Сертификат: серийный номер, период действия</td>
+        <td class="small_td">Дата и время подписания</td>
+    </tr>
+    <tr>
+        <td class="small_td">Подпись заказчика:</td>
+        <td>{{company.full_name}}, <br> {{company.owner}}</td>
+        <td>{{sign.manager_certificate}}<br> 
+            с {{sign.manager_created_at}} UTC <br> 
+            по {{sign.manager_expired_at}} UTC</td>
+        <td class="small_td">{{sign.manager_datetime_sign}} UTC</td>
+    </tr>
+    {% if sign.is_user %}
+    <tr>
+        <td class="small_td">Подпись исполнителя:</td>
+        <td>{{user.surname}} {{user.name}} {{user.patronymic}}</td>
+        <td>{{sign.user_certificate}} <br> 
+            с {{sign.user_created_at}} UTC <br> 
+            по {{sign.user_expired_at}} UTC</td>
+        <td class="small_td">{{sign.user_datetime_sign}} UTC</td>
+    </tr>
+    {% endif %}
+
+</table>
+{% endif %}

@@ -1,0 +1,4 @@
+export enum PopupActionsEnum {
+    OPEN_POPUP = "POPUP_ACTION__OPEN_POPUP",
+    CLOSE_POPUP = "POPUP_ACTION__CLOSE_POPUP",
+}
